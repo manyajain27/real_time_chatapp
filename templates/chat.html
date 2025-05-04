@@ -24,16 +24,16 @@
         --sidebar-bg: #ffffff;
         --chat-bg: #f5f7fb;
       }
-      
+
       body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         height: 100vh;
         display: flex;
         flex-direction: column;
         background-color: var(--chat-bg);
         margin: 0;
       }
-      
+
       .sidebar {
         background-color: var(--sidebar-bg);
         overflow-y: auto;
@@ -42,54 +42,54 @@
         display: flex;
         flex-direction: column;
       }
-      
+
       .sidebar-header {
         padding: 20px;
         border-bottom: 1px solid #e9ecef;
       }
-      
+
       .contacts {
         flex: 1;
         overflow-y: auto;
       }
-      
+
       .chats .list-group-item {
         border: none;
         border-bottom: 1px solid #e9ecef;
         padding: 15px 20px;
         transition: all 0.2s ease;
       }
-      
+
       .chats .list-group-item:hover {
         background-color: #f8f9fa;
       }
-      
+
       .chats .list-group-item.active {
         background-color: #f1f3f5;
         color: var(--dark-color);
         border-left: 3px solid var(--primary-color);
       }
-      
+
       .user-avatar {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
       }
-      
+
       .logout {
         padding: 15px 20px;
         border-top: 1px solid #e9ecef;
         background-color: var(--sidebar-bg);
       }
-      
+
       /* Chat Area Styles */
       .chat-container {
         display: flex;
         flex-direction: column;
         height: 100vh;
       }
-      
+
       .chat-header {
         padding: 15px 20px;
         border-bottom: 1px solid #e9ecef;
@@ -97,7 +97,7 @@
         display: flex;
         align-items: center;
       }
-      
+
       #chatbox {
         flex: 1;
         overflow-y: auto;
@@ -106,33 +106,33 @@
         background-image: radial-gradient(#e6e6e6 1px, transparent 1px);
         background-size: 20px 20px;
       }
-      
+
       .message-container {
         display: flex;
         margin-bottom: 12px;
         padding: 0 10px;
         width: 100%; /* Ensure full width */
       }
-      
+
       .message-container > div {
         max-width: 100%; /* Ensure child doesn't exceed container */
       }
-      
+
       .message-container.sender {
         justify-content: flex-end;
       }
-      
+
       .message-container.receiver {
         justify-content: flex-start;
       }
-      
+
       /* Mobile responsiveness for messages */
       @media (max-width: 576px) {
         .message-bubble {
           max-width: 85%; /* Even wider on small screens */
         }
       }
-      
+
       .message-bubble {
         min-width: 80px;
         max-width: 100%; /* Limit maximum width */
@@ -146,20 +146,19 @@
         padding-bottom: 22px; /* Space for timestamp */
         white-space: normal; /* Reset to normal behavior */
       }
-      
+
       .sender .message-bubble {
         background-color: var(--sender-bubble);
         color: white;
         border-bottom-right-radius: 4px;
       }
-      
+
       .receiver .message-bubble {
         background-color: var(--receiver-bubble);
         color: var(--dark-color);
         border-bottom-left-radius: 4px;
       }
-      
-      
+
       .message-time {
         position: absolute;
         bottom: 6px;
@@ -168,32 +167,32 @@
         opacity: 0.8;
         white-space: nowrap; /* Prevent timestamp from wrapping */
       }
-      
+
       .sender .message-time {
         color: rgba(255, 255, 255, 0.8);
       }
-      
+
       .receiver .message-time {
         color: var(--gray-color);
       }
-      
+
       .message-status {
         font-size: 0.6rem;
         margin-left: 2px;
         display: inline-block;
         vertical-align: middle;
       }
-      
+
       .status-delivered {
         color: rgba(255, 255, 255, 0.8);
       }
-      
+
       .chat-input {
         padding: 15px;
         background-color: white;
         border-top: 1px solid #e9ecef;
       }
-      
+
       .chat-input .form-control {
         border-radius: 20px;
         padding: 10px 20px;
@@ -205,7 +204,7 @@
         overflow-wrap: break-word;
         resize: none; /* Prevent manual resizing */
       }
-      
+
       .chat-input button {
         border-radius: 20px;
         padding: 10px 20px;
@@ -214,11 +213,11 @@
         border: none;
         transition: all 0.2s ease;
       }
-      
+
       .chat-input button:hover {
         background: var(--secondary-color);
       }
-      
+
       /* Empty States */
       .empty-state {
         display: flex;
@@ -229,13 +228,13 @@
         text-align: center;
         color: var(--gray-color);
       }
-      
+
       .empty-state i {
         font-size: 3rem;
         margin-bottom: 1rem;
         color: #dee2e6;
       }
-      
+
       /* Typing Indicator */
       .typing-indicator {
         display: inline-flex;
@@ -244,7 +243,7 @@
         border-radius: 18px;
         margin-bottom: 12px;
       }
-      
+
       .typing-dot {
         width: 6px;
         height: 6px;
@@ -253,31 +252,37 @@
         margin: 0 2px;
         animation: typingAnimation 1.4s infinite ease-in-out;
       }
-      
+
       .typing-dot:nth-child(1) {
         animation-delay: 0s;
       }
-      
+
       .typing-dot:nth-child(2) {
         animation-delay: 0.2s;
       }
-      
+
       .typing-dot:nth-child(3) {
         animation-delay: 0.4s;
       }
-      
+
       @keyframes typingAnimation {
-        0%, 60%, 100% { transform: translateY(0); }
-        30% { transform: translateY(-4px); }
+        0%,
+        60%,
+        100% {
+          transform: translateY(0);
+        }
+        30% {
+          transform: translateY(-4px);
+        }
       }
-      
+
       /* Search Box */
       .search-box {
         border-radius: 20px;
         padding: 8px 15px;
         border: 1px solid #e9ecef;
       }
-      
+
       /* Typing indicator container */
       .typing-indicator-container {
         margin-bottom: 10px;
@@ -292,51 +297,58 @@
           <div class="sidebar-header">
             <h5 class="mb-0 font-weight-bold">Chats</h5>
           </div>
-          
+
           <div class="contacts chats">
-            {% if user_last_messages %}
-              {% for item in user_last_messages %}
-              <a
-                href="{% url 'chat' item.user.username %}"
-                class="list-group-item list-group-item-action {% if item.user.username == room_name %} active {% endif %}"
-                data-id="{{ room_name }}"
-              >
-                <div class="d-flex align-items-center">
-                  <img
-                    src="https://ui-avatars.com/api/?name={{ item.user.username|urlencode }}&size=64&background=random"
-                    alt="{{ item.user.username }}"
-                    class="user-avatar mr-3"
-                  />
-                  <div class="w-100">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <strong class="text-truncate">{{ item.user.username }}</strong>
-                      {% if item.last_message %}
-                      <small class="text-muted">
-                        {{ item.last_message.timestamp|date:"H:i" }}
-                      </small>
-                      {% endif %}
-                    </div>
+            {% if user_last_messages %} {% for item in user_last_messages %}
+            <a
+              href="{% url 'chat' item.user.username %}"
+              class="list-group-item list-group-item-action {% if item.user.username == room_name %} active {% endif %}"
+              data-id="{{ room_name }}"
+            >
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://ui-avatars.com/api/?name={{ item.user.username|urlencode }}&size=64&background=random"
+                  alt="{{ item.user.username }}"
+                  class="user-avatar mr-3"
+                />
+                <div class="w-100">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <strong class="text-truncate"
+                      >{{ item.user.username }}</strong
+                    >
                     {% if item.last_message %}
-                    <small class="d-block text-truncate text-muted" style="max-width: 90%">
-                      {% if item.last_message.sender == request.user %}You: {% endif %}
-                      {{ item.last_message.content|truncatewords:5 }}
+                    <small class="text-muted">
+                      {{ item.last_message.timestamp|date:"H:i" }}
                     </small>
-                    {% else %}
-                    <small class="text-muted">No messages yet</small>
                     {% endif %}
                   </div>
+                  {% if item.last_message %}
+                  <small
+                    class="d-block text-truncate text-muted"
+                    style="max-width: 90%"
+                  >
+                    {% if item.last_message.sender == request.user %}You: {%
+                    endif %} {{ item.last_message.content|truncatewords:5 }}
+                  </small>
+                  {% else %}
+                  <small class="text-muted">No messages yet</small>
+                  {% endif %}
                 </div>
-              </a>
-              {% endfor %}
-            {% else %}
-              <div class="empty-state p-4">
-                <i class="fas fa-user-friends"></i>
-                <h5>No users available</h5>
-                <p class="text-muted">You don't have any contacts to chat with yet.</p>
               </div>
+            </a>
+            {% endfor %} {% else %}
+            <div class="empty-state p-4">
+              <i class="fas fa-user-friends"></i>
+              <h5>No users available</h5>
+              <p class="text-muted">
+                You don't have any contacts to chat with yet.
+              </p>
+            </div>
             {% endif %}
           </div>
-          
+
           <div class="logout">
             <div class="d-flex align-items-center">
               <img
@@ -344,7 +356,9 @@
                 class="user-avatar mr-3"
               />
               <div>
-                <h6 class="mb-0 font-weight-bold">{{ request.user.username|title }}</h6>
+                <h6 class="mb-0 font-weight-bold">
+                  {{ request.user.username|title }}
+                </h6>
                 <small class="text-muted">Online</small>
               </div>
               <a href="{% url 'logout' %}" class="ml-auto text-danger">
@@ -353,95 +367,102 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Chat Area -->
-        <div class="col-md-8 col-lg-9 p-0 chat-container" data-id="{{ room_name }}">
+        <div
+          class="col-md-8 col-lg-9 p-0 chat-container"
+          data-id="{{ room_name }}"
+        >
           {% if room_name %}
-            <!-- Chat Header -->
-            <div class="chat-header">
-              <div class="d-flex align-items-center">
-                <img
-                  src="https://ui-avatars.com/api/?name={{ room_name|urlencode }}&size=64&background=random"
-                  class="user-avatar mr-3"
-                />
-                <h5 class="mb-0 font-weight-bold">{{ room_name }}</h5>
-              </div>
-              
-              <form method="GET" action="" class="ml-auto">
-                <div class="input-group">
-                  <input
-                    type="text"
-                    name="search"
-                    id="searchInput"
-                    class="form-control search-box"
-                    placeholder="Search messages..."
-                    value="{{ search_query }}"
-                  />
-                  <div class="input-group-append">
-                    <button class="btn btn-light" type="submit">
-                      <i class="fas fa-search"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
+          <!-- Chat Header -->
+          <div class="chat-header">
+            <div class="d-flex align-items-center">
+              <img
+                src="https://ui-avatars.com/api/?name={{ room_name|urlencode }}&size=64&background=random"
+                class="user-avatar mr-3"
+              />
+              <h5 class="mb-0 font-weight-bold">{{ room_name }}</h5>
             </div>
-            
-            <!-- Chatbox -->
-            <div id="chatbox">
-              {% if chats %}
-                {% for message in chats %}
-                <div class="message-container {% if message.sender == request.user %} sender {% else %} receiver {% endif %}">
-                  <div>
-                    <div class="message-bubble">
-                      {{ message.content }}
-                      <span class="message-time">
-                        {{ message.timestamp|date:"H:i" }}
-                        {% if message.sender == request.user %}
-                          <span class="message-status status-delivered">
-                            <i class="fas fa-check"></i>
-                          </span>
-                        {% endif %}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              {% else %}
-                <div class="empty-state">
-                  <i class="fas fa-comments"></i>
-                  <h5>No messages yet</h5>
-                  <p class="text-muted">Start the conversation with {{ room_name }}</p>
-                </div>
-              {% endif %}
-            </div>
-            
-            <!-- Message Input -->
-            <div class="chat-input">
+
+            <form method="GET" action="" class="ml-auto">
               <div class="input-group">
-                <textarea
-      id="my_input"
-      class="form-control"
-      placeholder="Type a message..."
-      rows="1"
-      required
-    ></textarea>
+                <input
+                  type="text"
+                  name="search"
+                  id="searchInput"
+                  class="form-control search-box"
+                  placeholder="Search messages..."
+                  value="{{ search_query }}"
+                />
                 <div class="input-group-append">
-                  <button
-                    id="submit_button"
-                    class="btn btn-primary"
-                    type="button"
-                  >
-                    <i class="fas fa-paper-plane"></i>
+                  <button class="btn btn-light" type="submit">
+                    <i class="fas fa-search"></i>
                   </button>
                 </div>
               </div>
+            </form>
+          </div>
+
+          <!-- Chatbox -->
+          <div id="chatbox">
+            {% if chats %} {% for message in chats %}
+            <div
+              class="message-container {% if message.sender == request.user %} sender {% else %} receiver {% endif %}"
+            >
+              <div>
+                <div class="message-bubble">
+                  {{ message.content }}
+                  <span class="message-time">
+                    {{ message.timestamp|date:"H:i" }} {% if message.sender ==
+                    request.user %}
+                    <span class="message-status status-delivered">
+                      <i class="fas fa-check"></i>
+                    </span>
+                    {% endif %}
+                  </span>
+                </div>
+              </div>
             </div>
-          {% else %}
+            {% endfor %} {% else %}
             <div class="empty-state">
-              <i class="fas fa-comment-alt"></i>
-              <h5>No chat selected</h5>
-              <p class="text-muted">Select a chat from the sidebar to start messaging</p>
+              <i class="fas fa-comments"></i>
+              <h5>No messages yet</h5>
+              <p class="text-muted">
+                Start the conversation with {{ room_name }}
+              </p>
             </div>
+            {% endif %}
+          </div>
+
+          <!-- Message Input -->
+          <div class="chat-input">
+            <div class="input-group">
+              <textarea
+                id="my_input"
+                class="form-control"
+                placeholder="Type a message..."
+                rows="1"
+                required
+              ></textarea>
+              <div class="input-group-append">
+                <button
+                  id="submit_button"
+                  class="btn btn-primary"
+                  type="button"
+                >
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          {% else %}
+          <div class="empty-state">
+            <i class="fas fa-comment-alt"></i>
+            <h5>No chat selected</h5>
+            <p class="text-muted">
+              Select a chat from the sidebar to start messaging
+            </p>
+          </div>
           {% endif %}
         </div>
       </div>
@@ -456,12 +477,12 @@
           textarea.addEventListener('input', function() {
             // Reset height to auto to get correct scrollHeight
             this.style.height = 'auto';
-            
+
             // Set new height based on content (with max height)
             const newHeight = Math.min(this.scrollHeight, 100);
             this.style.height = newHeight + 'px';
           });
-          
+
           // Handle Enter key for sending (Shift+Enter for new line)
           textarea.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !e.shiftKey) {
@@ -493,7 +514,7 @@
 
         // Typing indicator timer
         let typingTimer;
-        
+
         document.querySelector("#my_input").addEventListener("input", function () {
           chatSocket.send(
             JSON.stringify({
@@ -501,7 +522,7 @@
               sender: "{{ request.user.username }}"
             })
           );
-      
+
           clearTimeout(typingTimer);
           typingTimer = setTimeout(() => {
             chatSocket.send(
@@ -516,7 +537,7 @@
         chatSocket.onopen = function (e) {
           console.log("WebSocket connection established");
         };
-        
+
         chatSocket.onclose = function (e) {
           console.log("WebSocket connection closed");
         };
@@ -548,11 +569,11 @@
 
         chatSocket.onmessage = function (e) {
           const data = JSON.parse(e.data);
-          
+
           // Handle typing indicator
           if ("typing" in data && data.sender !== "{{ request.user.username }}") {
             const existing = document.querySelector(".typing-indicator-container");
-          
+
             if (data.typing && !existing) {
               const typingHTML = `
                 <div class="message-container receiver typing-indicator-container">
@@ -569,7 +590,7 @@
             }
             return; // Prevent triggering message logic on typing event
           }
-          
+
           // Handle chat messages
           if (data.message && data.sender) {
             // Remove empty chat message if it exists
@@ -580,9 +601,9 @@
 
             const isCurrentUser = data.sender === "{{ request.user.username }}";
             const now = new Date();
-            const timeString = now.getHours().toString().padStart(2, '0') + ':' + 
+            const timeString = now.getHours().toString().padStart(2, '0') + ':' +
                              now.getMinutes().toString().padStart(2, '0');
-            
+
             const messageHTML = `
               <div class="message-container ${isCurrentUser ? 'sender' : 'receiver'}">
                 <div>
@@ -600,19 +621,19 @@
                 </div>
               </div>
             `;
-            
+
             chatbox.insertAdjacentHTML('beforeend', messageHTML);
             scrollToBottom();
-            
+
             // Update last message in sidebar
             const activeChat = document.querySelector(`.list-group-item.active`);
             if (activeChat) {
               const lastMessageElement = activeChat.querySelector('.text-muted');
               if (lastMessageElement) {
-                lastMessageElement.textContent = 
-                  (isCurrentUser ? "You: " : "") + 
+                lastMessageElement.textContent =
+                  (isCurrentUser ? "You: " : "") +
                   (data.message.length > 20 ? data.message.substring(0, 20) + "..." : data.message);
-                
+
                 // Update timestamp
                 const timestampElement = activeChat.querySelector('.text-muted:not(.last-msg)');
                 if (timestampElement) {
@@ -623,7 +644,6 @@
           }
         };
       {% endif %}
-      
     </script>
   </body>
 </html>
