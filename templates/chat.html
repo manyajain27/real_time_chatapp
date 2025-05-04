@@ -413,13 +413,14 @@
                 <div class="message-bubble">
                   {{ message.content }}
                   <span class="message-time">
-                    {{ message.timestamp|date:"H:i" }} {% if message.sender ==
-                    request.user %}
-                    <span class="message-status status-delivered">
-                      <i class="fas fa-check"></i>
-                    </span>
+                    {{ message.timestamp|date:"H:i" }}
+                    {% if message.sender == request.user %}
+                      <span class="message-status status-delivered">
+                        <i class="fas fa-check"></i>
+                      </span>
                     {% endif %}
                   </span>
+                  
                 </div>
               </div>
             </div>
