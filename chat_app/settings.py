@@ -42,7 +42,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = ['real-time-chatapp-3.onrender.com']
 
 
 
