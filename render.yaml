@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: chat-realtime-app
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "daphne -b 0.0.0.0 -p 10000 chat_app.asgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: chat_app.settings
+      - key: REDIS_URL
+        fromService:
+          type: keyvalue
+          name: chat-redis
+          property: connectionString
+      - key: SECRET_KEY
+        value: "django-insecure-fv@!-bs_yfk2!)c!8%$=qvhyxd)yfbo4z6cz&(eo@v6p2es7@6"
+      - key: DEBUG
+        value: "False"
