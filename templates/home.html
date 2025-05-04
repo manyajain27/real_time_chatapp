@@ -1,16 +1,103 @@
-
 {% extends 'base.html' %}
 
-{% block title %}Home - NESZEN {% endblock %}
+{% block title %}Home - Realtime Chat{% endblock %}
+
+{% block extra_head %}
+<style>
+    .welcome-container {
+        background: var(--form-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 50px 45px;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--form-border);
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .welcome-container h2 {
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 2.2rem;
+        color: #ffffff;
+    }
+
+    .welcome-icon {
+        font-size: 3rem;
+        color: var(--accent-color);
+        margin-bottom: 25px;
+        text-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    .welcome-text {
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .greeting {
+        background: rgba(0, 217, 255, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 217, 255, 0.2);
+        margin-bottom: 30px;
+    }
+
+    .btn-action {
+        background-image: var(--button-bg);
+        color: var(--button-text);
+        font-weight: 600;
+        font-size: 1.05rem;
+        border-radius: 8px;
+        padding: 14px 30px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 217, 255, 0.2);
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-action:hover {
+        background-image: var(--button-hover-bg);
+        box-shadow: 0 8px 25px var(--accent-glow);
+        transform: translateY(-3px);
+    }
+</style>
+{% endblock %}
 
 {% block content %}
-<div class="jumbotron text-center">
-    <h1 class="display-4">Welcome to the Chat Application</h1>
-    <hr class="my-4">
-    <p>Use the navigation bar to access your profile.</p>
-    {% if user.is_authenticated %}
-    <h2>Hello, {{ username }}!</h2>
-    <a href="{% url 'user_list' %}" class="btn btn-primary">Start Chat</a>
-    {% endif %}
+<div class="content-container">
+    <div class="welcome-container">
+        <div class="welcome-icon">
+            <i class="fas fa-comments"></i>
+        </div>
+        
+        <h2>Welcome to Realtime Chat!</h2>
+        
+        <p class="welcome-text">
+            Start a conversation with your friends in real-time.
+            Our platform offers instant messaging with a modern interface.
+        </p>
+        
+        {% if user.is_authenticated %}
+        <div class="greeting">
+            <h3>Hello, {{ user.username }}!</h3>
+        </div>
+        
+        <a href="{% url 'chat' user.username %}" class="btn-action">
+            <i class="fas fa-rocket"></i> Start Chatting
+        </a>
+        {% else %}
+        <a href="{% url 'login' %}" class="btn-action">
+            <i class="fas fa-lock"></i> Login to Get Started
+        </a>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}
