@@ -44,6 +44,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['real-time-chatapp-3.onrender.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://real-time-chatapp-3.onrender.com',
+]
 
 
 # Application definition
