@@ -329,8 +329,8 @@
                     class="d-block text-truncate text-muted"
                     style="max-width: 90%"
                   >
-                    {% if item.last_message.sender == request.user %}You: {%
-                    endif %} {{ item.last_message.content|truncatewords:5 }}
+                  {% if item.last_message.sender == request.user %}You: {% endif %} {{ item.last_message.content|truncatewords:5 }}
+
                   </small>
                   {% else %}
                   <small class="text-muted">No messages yet</small>
